@@ -101,3 +101,29 @@ body.about {
     height: auto;
   }
 }
+/* ─── About‑page overrides ─── */
+body.about .about-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+body.about .about-container > .about-image,
+body.about .about-container > .about-text {
+  flex: 1;
+  height: 100%;
+}
+body.about .about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+body.about .about-text {
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
