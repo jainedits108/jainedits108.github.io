@@ -1,51 +1,204 @@
-```css
 /* File: styles.css */
 
 /* Reset & base */
-* { margin:0; padding:0; box-sizing:border-box; }
-html, body { width:100%; min-height:100vh; font-family:Arial,sans-serif; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
 
-/* Navbar */
-nav { position:fixed; top:0; left:0; right:0; background:#171717; display:flex; justify-content:space-between; padding:10px 20px; z-index:1000; }
-nav ul { list-style:none; display:flex; }
-nav ul li { margin:0 10px; }
-nav a { color:#fff; text-decoration:none; font-size:18px; padding:8px 16px; transition:background .3s; }
-nav a:hover { background:#575757; border-radius:4px; }
+/* Navbar – common to all pages */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #171717;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin: 0 10px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 16px;
+  transition: background 0.3s;
+}
+nav a:hover {
+  background: #575757;
+  border-radius: 4px;
+}
 
-/* Page backgrounds */
-body.home { background:url('https://github.com/jainedits108/jainedits108.github.io/blob/main/8f9127d2-417e-4f25-b57c-c81f37937f20.jpg?raw=true') center/cover no-repeat; padding-top:70px; color:#fff; text-align:center; }
-body.about { background:url('https://github.com/jainedits108/jainedits108.github.io-about-/blob/main/Gemini_Generated_Image_hm0kabhm0kabhm0k.jpeg?raw=true') center/cover no-repeat; padding-top:70px; color:#fff; }
-body.team { background:url('https://github.com/jainedits108/jainedits108.github.io-the-team-/blob/main/Resized_5x4_Image.jpg?raw=true') center/cover no-repeat; padding-top:70px; color:#fff; }
-body.gallery { background:url('https://github.com/jainedits108/jainedits108.github.io-gallery-/blob/main/unnamed.png?raw=true') center/cover no-repeat; padding-top:70px; color:#333; }
+/* Home & About – single-screen, no scroll */
+body.home,
+body.about {
+  overflow: hidden;
+  height: 100vh;
+}
+body.home {
+  background: url('https://github.com/jainedits108/jainedits108.github.io/blob/main/8f9127d2-417e-4f25-b57c-c81f37937f20.jpg?raw=true') center/cover no-repeat;
+  padding-top: 70px; /* Navbar height */
+  color: #fff;
+  text-align: center;
+}
+body.about {
+  background: url('https://github.com/jainedits108/jainedits108.github.io-about-/blob/main/Gemini_Generated_Image_hm0kabhm0kabhm0k.jpeg?raw=true') center/cover no-repeat;
+  padding-top: 70px;
+  color: #fff;
+}
 
-/* Home */
-.main-content { padding-top:100px; }
-.main-content h1 { font-size:3em; margin-bottom:10px; }
-.main-content p { font-size:1.2em; }
+/* Center Home content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  padding: 0 20px;
+}
+.main-content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+.main-content p {
+  font-size: 1.2em;
+}
 
-/* About */
-.about-header { text-align:center; padding:80px 20px; }
-.about-container { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:2rem; max-width:1200px; margin:0 auto; padding:20px; }
-.about-image img { max-width:100%; border-radius:10px; }
-.about-text { max-width:600px; font-size:1.1rem; line-height:1.6; }
+/* Center About content */
+.about-header {
+  text-align: center;
+  padding: 20px;
+}
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 70px);
+  padding: 20px;
+  text-align: center;
+}
+.about-image img {
+  max-width: 50%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.about-text {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
-/* Team sections */
-.hero { text-align:center; padding:100px 20px; }
-.accounts-mentors, .close-friends, .collaborations, .supporters { max-width:1100px; margin:50px auto; padding:0 20px; }
-.accounts-mentors h2, .close-friends h2, .collaborations h2, .supporters h2 { font-size:2em; margin-bottom:10px; }
-.person { margin:20px 0; }
-.name { font-size:1.3em; font-weight:bold; }
-.description { font-size:1em; color:#ddd; }
+/* Team & Gallery – allow scrolling */
+body.team,
+body.gallery {
+  overflow: auto;
+  height: auto;
+  min-height: 100vh;
+  padding-top: 70px;
+}
+body.team {
+  background: url('https://github.com/jainedits108/jainedits108.github.io-the-team-/blob/main/Resized_5x4_Image.jpg?raw=true') center/cover no-repeat;
+  color: #fff;
+}
+body.gallery {
+  background: url('https://github.com/jainedits108/jainedits108.github.io-gallery-/blob/main/unnamed.png?raw=true') center/cover no-repeat;
+  color: #333;
+}
+
+/* Team Sections */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+.accounts-mentors,
+.close-friends,
+.collaborations,
+.supporters {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+.accounts-mentors h2,
+.close-friends h2,
+.collaborations h2,
+.supporters h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.person {
+  margin: 20px 0;
+}
+.name {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.description {
+  font-size: 1em;
+  color: #ddd;
+}
 
 /* Gallery grid */
-.gallery-intro { text-align:center; padding:100px 20px; }
-.albums-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; padding:20px; }
-.album { background:#fff; border-radius:10px; overflow:hidden; cursor:pointer; transition:transform .3s; text-align:center; }
-.album:hover { transform:scale(1.05); }
-.album-cover img { width:100%; height:200px; object-fit:cover; }
-.album h3 { padding:10px; font-size:1.1em; }
+.gallery-intro {
+  text-align: center;
+  padding: 100px 20px;
+}
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.album {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+  text-align: center;
+}
+.album:hover {
+  transform: scale(1.05);
+}
+.album-cover img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.album h3 {
+  padding: 10px;
+  font-size: 1.1em;
+}
 
 /* Responsive */
-@media(max-width:768px){ nav { flex-direction:column; align-items:center; } nav ul { flex-direction:column; } .about-container { flex-direction:column; } }
-```
-
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+  .about-container,
+  .main-content {
+    padding: 10px;
+  }
+  .about-image img {
+    max-width: 80%;
+  }
+}
