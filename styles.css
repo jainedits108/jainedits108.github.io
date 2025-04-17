@@ -8,197 +8,97 @@
 }
 html, body {
   width: 100%;
+  height: 100%;
   font-family: Arial, sans-serif;
 }
 
-/* Navbar – common to all pages */
+/* About page – full-screen, no scroll */
+body.about {
+  padding-top: 70px; /* height of nav */
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: url('https://github.com/jainedits108/jainedits108.github.io-about-/blob/main/Gemini_Generated_Image_hm0kabhm0k.jpeg?raw=true')
+    center/cover no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+/* Navbar */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: #171717;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 }
 nav ul {
-  list-style: none;
   display: flex;
+  list-style: none;
+  justify-content: center;
+  padding: 10px 20px;
 }
 nav ul li {
-  margin: 0 10px;
+  margin: 0 15px;
 }
 nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 18px;
-  padding: 8px 16px;
-  transition: background 0.3s;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.2s;
 }
-nav a:hover {
-  background: #575757;
-  border-radius: 4px;
-}
-
-/* Home & About – single-screen, no scroll */
-body.home,
-body.about {
-  overflow: hidden;
-  height: 100vh;
-}
-body.home {
-  background: url('https://github.com/jainedits108/jainedits108.github.io/blob/main/8f9127d2-417e-4f25-b57c-c81f37937f20.jpg?raw=true') center/cover no-repeat;
-  padding-top: 70px; /* Navbar height */
-  color: #fff;
-  text-align: center;
-}
-body.about {
-  background: url('https://github.com/jainedits108/jainedits108.github.io-about-/blob/main/Gemini_Generated_Image_hm0kabhm0kabhm0k.jpeg?raw=true') center/cover no-repeat;
-  padding-top: 70px;
-  color: #fff;
+nav a:hover,
+nav a.active {
+  opacity: 0.7;
 }
 
-/* Center Home content */
-.main-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 70px);
-  padding: 0 20px;
-}
-.main-content h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-.main-content p {
-  font-size: 1.2em;
-}
-
-/* Center About content */
-.about-header {
-  text-align: center;
-  padding: 20px;
-}
+/* Side‑by‑side layout */
 .about-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: calc(100vh - 70px);
-  padding: 20px;
-  text-align: center;
+  gap: 50px;
+  padding: 0 50px;
+  overflow: hidden;
 }
+.about-container > .about-image,
+.about-container > .about-text {
+  flex: 1;
+  height: 100%;
+}
+
+/* Image styling */
 .about-image img {
-  max-width: 50%;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
 }
+
+/* Text styling */
 .about-text {
-  max-width: 600px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Team & Gallery – allow scrolling */
-body.team,
-body.gallery {
-  overflow: auto;
-  height: auto;
-  min-height: 100vh;
-  padding-top: 70px;
-}
-body.team {
-  background: url('https://github.com/jainedits108/jainedits108.github.io-the-team-/blob/main/Resized_5x4_Image.jpg?raw=true') center/cover no-repeat;
-  color: #fff;
-}
-body.gallery {
-  background: url('https://github.com/jainedits108/jainedits108.github.io-gallery-/blob/main/unnamed.png?raw=true') center/cover no-repeat;
-  color: #333;
-}
-
-/* Team Sections */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-}
-.accounts-mentors,
-.close-friends,
-.collaborations,
-.supporters {
-  max-width: 1100px;
-  margin: 50px auto;
-  padding: 0 20px;
-}
-.accounts-mentors h2,
-.close-friends h2,
-.collaborations h2,
-.supporters h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-.person {
-  margin: 20px 0;
-}
-.name {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-.description {
-  font-size: 1em;
-  color: #ddd;
-}
-
-/* Gallery grid */
-.gallery-intro {
-  text-align: center;
-  padding: 100px 20px;
-}
-.albums-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
-}
-.album {
-  background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s;
-  text-align: center;
 }
-.album:hover {
-  transform: scale(1.05);
-}
-.album-cover img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.album h3 {
-  padding: 10px;
-  font-size: 1.1em;
+.about-text h1 {
+  margin-bottom: 20px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  nav {
+  .about-container {
     flex-direction: column;
-    align-items: center;
+    height: auto;
+    padding: 20px;
   }
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-  .about-container,
-  .main-content {
-    padding: 10px;
+  .about-container > .about-image,
+  .about-container > .about-text {
+    height: auto;
   }
   .about-image img {
-    max-width: 80%;
+    height: auto;
   }
 }
