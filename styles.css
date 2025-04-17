@@ -105,14 +105,29 @@ body.about {
   border-radius: 10px;
 }
 .about-text {
-  font-size: 1.3rem;      /* was 1.1rem */
+  background: rgba(0, 0, 0, 0.5);    /* bring back the semi‑transparent box */
+  border-radius: 10px;
+  padding: 20px;
+
+  /* center the content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;          /* vertical center */
+  align-items: center;              /* horizontal center */
+  text-align: center;
+
+  /* larger text */
+  font-size: 1.3rem;
   line-height: 1.6;
+  color: #fff;
+  overflow: hidden;
 }
 
 .about-text h1 {
-  font-size: 2rem;        /* was browser‑default (about 1.6rem) */
+  font-size: 2rem;                   /* bigger heading */
   margin-bottom: 20px;
 }
+
 
 /* Team & Gallery – allow scrolling */
 body.team,
