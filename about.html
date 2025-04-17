@@ -9,6 +9,35 @@
     body {
       margin: 0;
       padding: 0;
+      overflow: hidden;
+      background: url('https://github.com/jainedits108/jainedits108.github.io-about-/blob/main/Gemini_Generated_Image_hm0kabhm0kabhm0k.jpeg?raw=true') center/cover no-repeat;
+      color: white;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav li {
+      margin: 0 10px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
     }
     .about-header {
       text-align: center;
@@ -16,16 +45,13 @@
     }
     .about-container {
       display: flex;
-      flex-direction: row;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
       padding: 50px;
       gap: 50px;
     }
     .about-image img {
       width: 350px;
-      max-width: 100%;
       height: auto;
       border-radius: 15px;
       object-fit: cover;
@@ -34,7 +60,9 @@
       max-width: 600px;
       font-size: 1.1rem;
       line-height: 1.6;
-      flex: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
     }
     @media (max-width: 768px) {
       .about-container {
@@ -50,14 +78,14 @@
   <!-- Navigation bar -->
   <nav>
     <ul class="nav-left">
-      <li><a href="https://jainedits108.github.io/">Home</a></li>
-      <li><a href="https://jainedits108.github.io/about/">About</a></li>
-      <li><a href="https://jainedits108.github.io/team/">The Team</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="team.html">The Team</a></li>
     </ul>
     <ul class="nav-right">
-      <li><a href="https://jainedits108.github.io/gallery/">Gallery</a></li>
-      <li><a href="https://jainedits108.github.io/stories/">Stories</a></li>
-      <li><a href="https://jainedits108.github.io/contact/">Contact</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
