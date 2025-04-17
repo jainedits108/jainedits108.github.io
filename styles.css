@@ -105,13 +105,21 @@ body.about {
   border-radius: 10px;
 }
 .about-text {
-  font-size: 1.1rem;
+  /* vertical + horizontal center */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;       /* horizontal centering */
+
+  /* sizing */
+  font-size: 1.2rem;         /* slightly up from 1.1rem */
   line-height: 1.6;
   padding: 20px;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border-radius: 10px;
-  overflow: hidden;                   /* hide overflow if any */
+  overflow: hidden;
+  text-align: center;        /* center text itself */
 }
 
 /* Team & Gallery – allow scrolling */
