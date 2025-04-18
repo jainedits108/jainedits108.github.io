@@ -42,22 +42,24 @@ nav a:hover {
   border-radius: 4px;
 }
 
-/* Home & About – single-screen, no scroll */
+/* Home & About – single‑screen, no scroll */
 body.home,
 body.about {
   overflow: hidden;
   height: 100vh;
 }
+
+/* Home background & text */
 body.home {
-  background: url('https://github.com/jainedits108/jainedits108.github.io/blob/main/8f9127d2-417e-4f25-b57c-c81f37937f20.jpg?raw=true') center/cover no-repeat;
-  padding-top: 70px; /* Navbar height */
+  /* fallback color so the white text is visible if the image fails */
+  background-color: #000;
+  /* raw.githubusercontent.com URL ensures GitHub will actually serve the image */
+  background: url('https://raw.githubusercontent.com/jainedits108/jainedits108.github.io/main/8f9127d2-417e-4f25-b57c-c81f37937f20.jpg')
+    center/cover no-repeat;
+  background-size: cover;
+  padding-top: 70px; /* match your navbar height */
   color: #fff;
   text-align: center;
-}
-body.about {
-  background: url('https://github.com/jainedits108/jainedits108.github.io-about-/blob/main/Gemini_Generated_Image_hm0kabhm0kabhm0k.jpeg?raw=true') center/cover no-repeat;
-  padding-top: 70px;
-  color: #fff;
 }
 
 /* Center Home content */
