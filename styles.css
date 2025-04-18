@@ -26,8 +26,6 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  margin: 0;
-  padding: 0;
 }
 nav ul li {
   margin: 0 10px;
@@ -39,8 +37,7 @@ nav a {
   padding: 8px 16px;
   transition: background 0.3s;
 }
-nav a:hover,
-nav a.active {
+nav a:hover {
   background: #575757;
   border-radius: 4px;
 }
@@ -54,10 +51,8 @@ body.about {
 
 /* Home background & text */
 body.home {
-  background-color: #000;
-  background: url('https://raw.githubusercontent.com/jainedits108/jainedits108.github.io/main/8f9127d2-417e-4f25-b57c-c81f37937f20.jpg') center/cover no-repeat;
-  background-size: cover;
-  padding-top: 70px;
+  background: url('https://github.com/jainedits108/oldjainedits108.github.io/blob/main/8f9127d2-417e-4f25-b57c-c81f37937f20.jpg?raw=true') center/cover no-repeat;
+  padding-top: 70px; /* Navbar height */
   color: #fff;
   text-align: center;
 }
