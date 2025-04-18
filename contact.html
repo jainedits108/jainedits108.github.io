@@ -22,20 +22,18 @@
       position: fixed; top:0; left:0; right:0;
       background: rgba(0,0,0,0.7); z-index:1000;
     }
-    nav ul {
-      display:flex;
-      justify-content:space-between;
-      padding:15px 20px;
-      margin:0;
-      list-style:none;
-    }
-    nav a {
-      color:#fff; text-decoration:none; font-weight:bold; font-size:1rem;
-      transition:opacity 0.2s;
-    }
-    nav a:hover,
-    nav a.active {
-      opacity:0.7;
+    <nav>
+  <ul class="nav-left">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="team.html">The Team</a></li>
+  </ul>
+  <ul class="nav-right">
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="stories.html">Stories</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
     }
 
     .contact-header {
