@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    /* ── page styles ── */
     body.contact {
       font-family: 'Roboto', sans-serif;
       background: url('https://t3.ftcdn.net/jpg/03/01/23/60/360_F_301236054_k5wPRqc4MgRO3hVT1hO9w7FoeaZTYXT9.jpg')
@@ -19,25 +18,54 @@
       min-height: 100vh;
       margin: 0;
     }
-    nav { position: fixed; top:0; left:0; right:0; background: rgba(0,0,0,0.7); z-index:1000; }
-    nav ul { display:flex; justify-content:space-between; padding:15px 20px; margin:0; list-style:none; }
-    nav a { color:#fff; text-decoration:none; font-weight:bold; }
+    nav {
+      position: fixed; top:0; left:0; right:0;
+      background: rgba(0,0,0,0.7); z-index:1000;
+    }
+    nav ul {
+      display:flex;
+      justify-content:space-between;
+      padding:15px 20px;
+      margin:0;
+      list-style:none;
+    }
+    nav a {
+      color:#fff; text-decoration:none; font-weight:bold; font-size:1rem;
+      transition:opacity 0.2s;
+    }
+    nav a:hover,
+    nav a.active {
+      opacity:0.7;
+    }
+
     .contact-header {
       max-width:600px; margin:40px auto 20px; text-align:center;
       text-shadow:0 1px 3px rgba(0,0,0,0.7);
     }
-    .contact-header .tagline { font-size:1.2rem; margin-bottom:10px; opacity:0.9; }
-    .contact-header h1 { font-size:2.5rem; margin-bottom:10px; }
-    .contact-header p { font-size:1.1rem; line-height:1.6; }
-    .contact-header a { color:#fff; text-decoration:underline; }
+    .contact-header .tagline {
+      font-size:1.2rem; margin-bottom:10px; opacity:0.9;
+    }
+    .contact-header h1 {
+      font-size:2.5rem; margin-bottom:10px;
+    }
+    .contact-header p {
+      font-size:1.1rem; line-height:1.6;
+    }
+    .contact-header a {
+      color:#fff; font-weight:500; text-decoration:underline;
+    }
 
     .contact-form-container {
       max-width:600px; margin:0 auto 60px;
       background:rgba(255,255,255,0.9); border-radius:8px;
       box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:30px; color:#333;
     }
-    .contact-form { display:flex; flex-direction:column; gap:20px; }
-    .contact-form label { font-weight:500; display:block; margin-bottom:4px; }
+    .contact-form {
+      display:flex; flex-direction:column; gap:20px;
+    }
+    .contact-form label {
+      font-weight:500; display:block; margin-bottom:4px;
+    }
     .contact-form input,
     .contact-form textarea {
       width:100%; padding:12px 16px; border:1px solid #ccc;
@@ -48,18 +76,24 @@
       background:#171717; color:#fff; border:none; border-radius:4px;
       font-size:1rem; cursor:pointer; transition:background 0.3s;
     }
-    .contact-form button:hover { background:#333; }
+    .contact-form button:hover {
+      background:#333;
+    }
 
     .thank-you {
-      text-align: center; font-size:1.2rem; padding:40px;
-      color: #171717;
+      text-align:center; font-size:1.2rem; padding:40px; color:#171717;
     }
 
     .instagram-section {
       max-width:600px; margin:0 auto 60px; text-align:center;
     }
-    .instagram-section h2 { font-size:1.5rem; margin-bottom:10px; }
-    .instagram-section a { color:#fff; text-decoration:underline; font-weight:500; }
+    .instagram-section h2 {
+      font-size:1.5rem; margin-bottom:10px;
+      text-shadow:0 1px 3px rgba(0,0,0,0.7);
+    }
+    .instagram-section a {
+      color:#fff; text-decoration:underline; font-weight:500;
+    }
   </style>
 </head>
 <body class="contact">
@@ -95,10 +129,10 @@
       target="hidden_iframe"
       onsubmit="submitted=true;"
     >
-      <!-- replace these entry.X with your real field IDs -->
-      <input type="hidden" name="entry.123456789" id="entryName">
-      <input type="hidden" name="entry.987654321" id="entryEmail">
-      <input type="hidden" name="entry.1122334455" id="entryMessage">
+      <!-- hidden fields for Google Form -->
+      <input type="hidden" name="entry.354503125" id="entryName">
+      <input type="hidden" name="entry.967338555" id="entryEmail">
+      <input type="hidden" name="entry.1272075434" id="entryMessage">
 
       <div>
         <label for="nameInput">Name</label>
@@ -123,15 +157,18 @@
   </div>
 
   <script>
-    // capture user input into hidden fields before submit
-    document.getElementById('contactForm').addEventListener('submit', e => {
-      document.getElementById('entryName').value    = document.getElementById('nameInput').value;
-      document.getElementById('entryEmail').value   = document.getElementById('emailInput').value;
-      document.getElementById('entryMessage').value = document.getElementById('messageInput').value;
+    // copy inputs into hidden fields before submit
+    document.getElementById('contactForm').addEventListener('submit', () => {
+      document.getElementById('entryName').value    =
+        document.getElementById('nameInput').value;
+      document.getElementById('entryEmail').value   =
+        document.getElementById('emailInput').value;
+      document.getElementById('entryMessage').value =
+        document.getElementById('messageInput').value;
 
-      // replace form with thank-you message after a slight delay
+      // show thank-you after a brief delay
       setTimeout(() => {
-        document.getElementById('formSection').innerHTML = 
+        document.getElementById('formSection').innerHTML =
           '<div class="thank-you">Thanks for reaching out! I’ll be in touch soon. 🙏</div>';
       }, 500);
     });
