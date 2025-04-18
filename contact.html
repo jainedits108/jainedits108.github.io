@@ -14,7 +14,7 @@
       background: url('https://t3.ftcdn.net/jpg/03/01/23/60/360_F_301236054_k5wPRqc4MgRO3hVT1hO9w7FoeaZTYXT9.jpg')
         center/cover no-repeat;
       color: #fff;
-      padding-top: 85px;            /* match your nav height */
+      padding-top: 85px;   /* match your nav height */
       min-height: 100vh;
       margin: 0;
     }
@@ -45,7 +45,7 @@
     .contact-form-container {
       max-width: 600px;
       margin: 0 auto 40px;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255,255,255,0.9);
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 30px;
@@ -121,26 +121,30 @@
     <p>
       DM me at
       <a href="https://instagram.com/jain_edits108" target="_blank">@jain_edits108</a>
-      on Instagram or
-      <a href="mailto:jainedits108@gmail.com">email me here</a>.
+      on Instagram or use the form below.
     </p>
   </div>
 
   <div class="contact-form-container">
-    <form class="contact-form" id="contactForm">
+    <form
+      class="contact-form"
+      action="https://formspree.io/f/yourFormIDHere"
+      method="POST"
+    >
       <div>
         <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name" required>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="you@example.com" required>
+        <input type="email" id="email" name="_replyto" placeholder="you@example.com" required>
       </div>
       <div>
         <label for="message">Message</label>
-        <textarea id="message" rows="6" placeholder="What’s on your mind?" required></textarea>
+        <textarea id="message" name="message" rows="6" placeholder="What’s on your mind?" required></textarea>
       </div>
-      <button type="button" id="sendBtn">Send Message</button>
+      <input type="hidden" name="_subject" value="New message from Jain_edits108 site">
+      <button type="submit">Send Message</button>
     </form>
   </div>
 
@@ -148,17 +152,5 @@
     <h2>Follow Me on Instagram</h2>
     <a href="https://instagram.com/jain_edits108" target="_blank">@jain_edits108</a>
   </div>
-
-  <script>
-    document.getElementById('sendBtn').addEventListener('click', () => {
-      const name    = encodeURIComponent(document.getElementById('name').value);
-      const email   = encodeURIComponent(document.getElementById('email').value);
-      const message = encodeURIComponent(document.getElementById('message').value);
-      const mailto = `mailto:jainedits108@gmail.com`
-        + `?subject=${name}%20sent%20you%20a%20message`
-        + `&body=Name:%20${name}%0D%0AEmail:%20${email}%0D%0A%0D%0A${message}`;
-      window.location.href = mailto;
-    });
-  </script>
 </body>
 </html>
