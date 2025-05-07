@@ -213,13 +213,14 @@
 
   <script>
     // Auto-generate IMG_0373–IMG_0448 URLs for Palitana
-    const albums = {
-      palitana: Array.from(
-        { length: 448 - 373 + 1 },
-        (_, i) => `images/palitana/IMG_${String(373 + i).padStart(4, '0')}.jpeg`
-      )
-      // add more albums here if you upload them…
-    };
+   const albums = {
+  palitana: Array.from(
+    { length: 448 - 373 + 1 },
+    (_, i) => `IMG_${String(373 + i).padStart(4, '0')}.jpeg`
+  )
+  // …
+};
+
 
     const covers     = document.querySelectorAll('.album');
     const mainGrid   = document.querySelector('section.albums-grid');
