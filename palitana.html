@@ -18,6 +18,7 @@
       aspect-ratio: 4/5;
       overflow: hidden;
       border-radius: 8px;
+      position: relative;
     }
     .album-cover img {
       width: 100%;
@@ -25,17 +26,40 @@
       object-fit: cover;
       object-position: center;
     }
+    /* caption for missing images */
+    .missing-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.8);
+      color: #d00;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 4px 0;
+    }
   </style>
 </head>
 <body class="gallery">
-  <nav>…your nav here…</nav>
+  <nav>
+    <ul class="nav-left">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="team.html">The Team</a></li>
+    </ul>
+    <ul class="nav-right">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <section class="gallery-intro">
     <h1>Palitana Album</h1>
     <p>Walk the marble-white steps of Palitana — home to 863 Jain temples nestled atop a sacred hill.</p>
   </section>
 
-  <!-- this empty grid will get filled by JS -->
+  <!-- Grid container for JavaScript injection -->
   <section class="albums-grid" id="palitana-grid"></section>
 
   <div style="text-align:center; margin:40px 0;">
@@ -43,37 +67,42 @@
   </div>
 
   <script>
-  (function() {
-    // adjust if images live in a sub-folder
-    const folderPath = '';
-    const files = [
-      "IMG_0373.jpeg","IMG_0374.jpeg","IMG_0375.jpeg","IMG_0377.jpeg",
-      "IMG_0378.jpeg","IMG_0379.jpeg","IMG_0380.jpeg","IMG_0381.jpeg",
-      "IMG_0382.jpeg","IMG_0383.jpeg","IMG_0384.jpeg","IMG_0385.jpeg",
-      "IMG_0386.jpeg","IMG_0388.jpeg","IMG_0389.jpeg","IMG_0391.jpeg",
-      "IMG_0392.jpeg","IMG_0393.jpeg","IMG_0394.jpeg","IMG_0396.jpeg",
-      "IMG_0397.jpeg","IMG_0398.jpeg","IMG_0399.jpeg","IMG_0410.jpeg",
-      "IMG_0411.jpeg","IMG_0412.jpeg","IMG_0413.jpeg","IMG_0414.jpeg",
-      "IMG_0415.jpeg","IMG_0418.jpeg","IMG_0419.jpeg","IMG_0420.jpeg",
-      "IMG_0421.jpeg","IMG_0422.jpeg","IMG_0423.jpeg","IMG_0424.jpeg",
-      "IMG_0425.jpeg","IMG_0426.jpeg","IMG_0427.jpeg","IMG_0428.jpeg",
-      "IMG_0429.jpeg","IMG_0430.jpeg","IMG_0431.jpeg","IMG_0432.jpeg",
-      "IMG_0433.jpeg","IMG_0434.jpeg","IMG_0435.jpeg","IMG_0436.jpeg",
-      "IMG_0441.jpeg","IMG_0442.jpeg","IMG_0443.jpeg","IMG_0445.jpeg",
-      "IMG_0446.jpeg","IMG_0447.jpeg","IMG_0448.jpeg"
-    ];
-    const grid = document.getElementById('palitana-grid');
-    files.forEach((file, idx) => {
-      const cell = document.createElement('div');
-      cell.className = 'album-cover';
-      const img = document.createElement('img');
-      img.src = folderPath + file;
-      img.alt = `Palitana ${idx+1}`;
-      img.onerror = () => console.warn('Failed to load:', img.src);
-      cell.appendChild(img);
-      grid.appendChild(cell);
-    });
-  })();
+    (function() {
+      const folderPath = '';
+      const files = [
+        "IMG_0373.jpeg","IMG_0374.jpeg","IMG_0375.jpeg","IMG_0377.jpeg",
+        "IMG_0378.jpeg","IMG_0379.jpeg","IMG_0380.jpeg","IMG_0381.jpeg",
+        "IMG_0382.jpeg","IMG_0383.jpeg","IMG_0384.jpeg","IMG_0385.jpeg",
+        "IMG_0386.jpeg","IMG_0388.jpeg","IMG_0389.jpeg","IMG_0391.jpeg",
+        "IMG_0392.jpeg","IMG_0393.jpeg","IMG_0394.jpeg","IMG_0396.jpeg",
+        "IMG_0397.jpeg","IMG_0398.jpeg","IMG_0399.jpeg","IMG_0410.jpeg",
+        "IMG_0411.jpeg","IMG_0412.jpeg","IMG_0413.jpeg","IMG_0414.jpeg",
+        "IMG_0415.jpeg","IMG_0418.jpeg","IMG_0419.jpeg","IMG_0420.jpeg",
+        "IMG_0421.jpeg","IMG_0422.jpeg","IMG_0423.jpeg","IMG_0424.jpeg",
+        "IMG_0425.jpeg","IMG_0426.jpeg","IMG_0427.jpeg","IMG_0428.jpeg",
+        "IMG_0429.jpeg","IMG_0430.jpeg","IMG_0431.jpeg","IMG_0432.jpeg",
+        "IMG_0433.jpeg","IMG_0434.jpeg","IMG_0435.jpeg","IMG_0436.jpeg",
+        "IMG_0441.jpeg","IMG_0442.jpeg","IMG_0443.jpeg","IMG_0445.jpeg",
+        "IMG_0446.jpeg","IMG_0447.jpeg","IMG_0448.jpeg"
+      ];
+      const grid = document.getElementById('palitana-grid');
+      files.forEach((file, idx) => {
+        const cell = document.createElement('div');
+        cell.className = 'album-cover';
+        const img = document.createElement('img');
+        img.src = folderPath + file;
+        img.alt = `Palitana ${idx+1}`;
+        img.onerror = function() {
+          console.warn('Failed to load:', this.src);
+          const cap = document.createElement('div');
+          cap.className = 'missing-caption';
+          cap.textContent = file;
+          cell.appendChild(cap);
+        };
+        cell.appendChild(img);
+        grid.appendChild(cell);
+      });
+    })();
   </script>
 </body>
 </html>
