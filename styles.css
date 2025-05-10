@@ -209,7 +209,7 @@ body.gallery {
 
 /* 2) Only crop the thumbnails in gallery.html (those inside .album) */
 .album .album-cover img {
-  height: 200px;
+  height: 100px;
   object-fit: cover;
 }
 
