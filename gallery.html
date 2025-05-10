@@ -11,7 +11,7 @@
       background: url('https://t3.ftcdn.net/jpg/07/72/28/54/360_F_772285422_VX6pVIRVgtaBYlWbCybjcKraSvHjB5zJ.jpg') center/cover no-repeat;
       color: white;
       margin: 0;
-      padding: 0;
+      padding-top: 70px; /* navbar offset */
     }
     .gallery-intro {
       text-align: center;
@@ -30,11 +30,36 @@
       line-height: 1.6;
       color: black;
     }
+    .albums-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .album {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      background: #fff;
+    }
+    .album:hover {
+      transform: scale(1.05);
+    }
+    .album-cover img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
     .album h3 {
+      padding: 10px;
+      font-size: 1.1em;
       text-align: center;
-      font-size: 1.2rem;
-      color: black;
-      margin-top: 10px;
+      background: #fff;
+      color: #000;
+      margin: 0;
     }
   </style>
 </head>
@@ -58,192 +83,102 @@
   </section>
 
   <section class="albums-grid">
-    <div class="album" data-album="palitana">
-      <div class="album-cover">
-        <img src="https://www.gujaratexpert.com/blog/wp-content/uploads/2017/03/Shatrunjaya-Palitana.jpg" alt="Palitana" />
-      </div>
+    <a href="palitana.html" class="album">
+      <div class="album-cover"><img src="https://www.gujaratexpert.com/blog/wp-content/uploads/2017/03/Shatrunjaya-Palitana.jpg" alt="Palitana"></div>
       <h3>Palitana</h3>
-    </div>
-    <div class="album" data-album="girnar">
-      <div class="album-cover">
-        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/ce/5f/7a/girnar.jpg?w=1200&h=-1&s=1" alt="Girnar" />
-      </div>
+    </a>
+    <a href="girnar.html" class="album">
+      <div class="album-cover"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/ce/5f/7a/girnar.jpg?w=1200&h=-1&s=1" alt="Girnar"></div>
       <h3>Girnar</h3>
-    </div>
-    <div class="album" data-album="shikarji">
-      <div class="album-cover">
-        <img src="https://www.opindia.com/wp-content/uploads/2023/01/977A6392-A892-4DE8-BB65-5B06601C5A18.jpeg" alt="Shikharji" />
-      </div>
+    </a>
+    <a href="shikharji.html" class="album">
+      <div class="album-cover"><img src="https://www.opindia.com/wp-content/uploads/2023/01/977A6392-A892-4DE8-BB65-5B06601C5A18.jpeg" alt="Shikharji"></div>
       <h3>Shikharji</h3>
-    </div>
-    <div class="album" data-album="shravanabelagola">
-      <div class="album-cover">
-        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/28/b5/b7.jpg" alt="Shravanabelagola" />
-      </div>
+    </a>
+    <a href="shravanabelagola.html" class="album">
+      <div class="album-cover"><img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/28/b5/b7.jpg" alt="Shravanabelagola"></div>
       <h3>Shravanabelagola</h3>
-    </div>
-    <div class="album" data-album="taranga">
-      <div class="album-cover">
-        <img src="https://jainsattva.com/wp-content/uploads/2024/06/taranga-sri-ajitnath-bhagwan-shwetamber-jain-temple-gujarat.jpg" alt="Taranga" />
-      </div>
+    </a>
+    <a href="taranga.html" class="album">
+      <div class="album-cover"><img src="https://jainsattva.com/wp-content/uploads/2024/06/taranga-sri-ajitnath-bhagwan-shwetamber-jain-temple-gujarat.jpg" alt="Taranga"></div>
       <h3>Taranga</h3>
-    </div>
-    <div class="album" data-album="kundalpur">
-      <div class="album-cover">
-        <img src="https://images.bhaskarassets.com/web2images/521/2022/02/15/new-project-33_1644938239.jpg" alt="Kundalpur" />
-      </div>
+    </a>
+    <a href="kundalpur.html" class="album">
+      <div class="album-cover"><img src="https://images.bhaskarassets.com/web2images/521/2022/02/15/new-project-33_1644938239.jpg" alt="Kundalpur"></div>
       <h3>Kundalpur</h3>
-    </div>
-    <div class="album" data-album="hastagiri">
-      <div class="album-cover">
-        <img src="https://content.jdmagicbox.com/comp/bhavnagar/y5/0278px278.x278.131223225636.s9y5/catalogue/hastagiri-jain-tirth-palitana-bhavnagar-temples-p7x56tg9i6.jpg" alt="Hastagiri" />
-      </div>
+    </a>
+    <a href="hastagiri.html" class="album">
+      <div class="album-cover"><img src="https://content.jdmagicbox.com/comp/bhavnagar/y5/0278px278.x278.131223225636.s9y5/catalogue/hastagiri-jain-tirth-palitana-bhavnagar-temples-p7x56tg9i6.jpg" alt="Hastagiri"></div>
       <h3>Hastagiri</h3>
-    </div>
-    <div class="album" data-album="tijara">
-      <div class="album-cover">
-        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/7b/93/43/tijara-jain-temple.jpg?w=1200&h=1200&s=1" alt="Tijara" />
-      </div>
+    </a>
+    <a href="tijara.html" class="album">
+      <div class="album-cover"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/7b/93/43/tijara-jain-temple.jpg?w=1200&h=1200&s=1" alt="Tijara"></div>
       <h3>Tijara</h3>
-    </div>
-    <div class="album" data-album="moodbidri">
-      <div class="album-cover">
-        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/9a/0b/0f/img-20171227-094423-largejpg.jpg?w=1200&h=-1&s=1" alt="Moodbidri" />
-      </div>
+    </a>
+    <a href="moodbidri.html" class="album">
+      <div class="album-cover"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/9a/0b/0f/img-20171227-094423-largejpg.jpg?w=1200&h=-1&s=1" alt="Moodbidri"></div>
       <h3>Moodbidri</h3>
-    </div>
-    <div class="album" data-album="mandaragiri">
-      <div class="album-cover">
-        <img src="https://backpackrkl.wordpress.com/wp-content/uploads/2021/03/dsc_8239c.jpg?w=731" alt="Mandaragiri" />
-      </div>
+    </a>
+    <a href="mandaragiri.html" class="album">
+      <div class="album-cover"><img src="https://backpackrkl.wordpress.com/wp-content/uploads/2021/03/dsc_8239c.jpg?w=731" alt="Mandaragiri"></div>
       <h3>Mandaragiri</h3>
-    </div>
-    <div class="album" data-album="ranakpur">
-      <div class="album-cover">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg/1200px-Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg" alt="Ranakpur" />
-      </div>
+    </a>
+    <a href="ranakpur.html" class="album">
+      <div class="album-cover"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg/1200px-Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg" alt="Ranakpur"></div>
       <h3>Ranakpur</h3>
-    </div>
-    <div class="album" data-album="dilwara">
-      <div class="album-cover">
-        <img src="https://www.rajasthantoursoperatorindia.com/images/destination/mount-abu/slide.jpg" alt="Dilwara" />
-      </div>
+    </a>
+    <a href="dilwara.html" class="album">
+      <div class="album-cover"><img src="https://www.rajasthantoursoperatorindia.com/images/destination/mount-abu/slide.jpg" alt="Dilwara"></div>
       <h3>Dilwara</h3>
-    </div>
-    <div class="album" data-album="kolanupaka">
-      <div class="album-cover">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Jain_temple_warangal.jpg" alt="Kolanupaka" />
-      </div>
+    </a>
+    <a href="kolanupaka.html" class="album">
+      <div class="album-cover"><img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Jain_temple_warangal.jpg" alt="Kolanupaka"></div>
       <h3>Kolanupaka</h3>
-    </div>
-    <div class="album" data-album="ellora">
-      <div class="album-cover">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmk68-SShHVSKZ77T5_k6Zg3H-7MMs_PtrRoU8WbZVLf0TM3uArcO0Dzreex-foADiPh4rK_z0qJdSxD_AoWrnu5B7iwnHURQ-WfjQ1Kvx1vwxsHurH4SOpo6TBZgsDKPKcKpitAgrOwc6/s1600/Jaina+caves+Ellora+1.jpg" alt="Ellora Caves" />
-      </div>
+    </a>
+    <a href="ellora.html" class="album">
+      <div class="album-cover"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmk68-SShHVSKZ77T5_k6Z3H-7MMs_PtrRoU8WbZVLf0TM3uArcO0Dzreex-foADiPh4rK_z0qJdSxD_AoWrnu5B7iwnHURQ-WfjQ1Kvx1vwxsHurH4SOpo6TBZgsDKPKcKpitAgrOwc6/s1600/Jaina+caves+Ellora+1.jpg" alt="Ellora Caves"></div>
       <h3>Ellora Caves</h3>
-    </div>
-    <div class="album" data-album="badami">
-      <div class="album-cover">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Wall_relief2_in_the_Jain_cave_temple_no._4_in_Badami.JPG" alt="Badami" />
-      </div>
+    </a>
+    <a href="badami.html" class="album">
+      <div class="album-cover"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Wall_relief2_in_the_Jain_cave_temple_no._4_in_Badami.JPG" alt="Badami"></div>
       <h3>Badami</h3>
-    </div>
-    <div class="album" data-album="udayagiri">
-      <div class="album-cover">
-        <img src="https://redscarabtravelandmedia.wordpress.com/wp-content/uploads/2015/04/odisha_khandagiri-jain-statues-carved-into-cliffs-dsc00101_anurag-priya.jpg?w=635&h=482" alt="Udayagiri-Khandagiri" />
-      </div>
+    </a>
+    <a href="udayagiri.html" class="album">
+      <div class="album-cover"><img src="https://redscarabtravelandmedia.wordpress.com/wp-content/uploads/2015/04/odisha_khandagiri-jain-statues-carved-into-cliffs-dsc00101_anurag-priya.jpg?w=635&h=482" alt="Udayagiri-Khandagiri"></div>
       <h3>Udayagiri-Khandagiri</h3>
-    </div>
-    <div class="album" data-album="katariyaji">
-      <div class="album-cover">
-        <img src="https://katariyajaintirth.com/images/katariya_jain_tirth_derasar.png" alt="Katariyaji" />
-      </div>
+    </a>
+    <a href="katariyaji.html" class="album">
+      <div class="album-cover"><img src="https://katariyajaintirth.com/images/katariya_jain_tirth_derasar.png" alt="Katariyaji"></div>
       <h3>Katariyaji</h3>
-    </div>
-    <div class="album" data-album="navagarh">
-      <div class="album-cover">
-        <img src="https://www.jaintirthtourism.com/mandir_photo/Navagarh_Pimpari_Maharashtra_640-425.jpg" alt="Navagarh" />
-      </div>
+    </a>
+    <a href="navagarh.html" class="album">
+      <div class="album-cover"><img src="https://www.jaintirthtourism.com/mandir_photo/Navagarh_Pimpari_Maharashtra_640-425.jpg" alt="Navagarh"></div>
       <h3>Navagarh</h3>
-    </div>
-    <div class="album" data-album="bandhaji">
-      <div class="album-cover">
-        <img src="https://content.jdmagicbox.com/v2/comp/tikamgarh/k1/9999p7683.7683.190119163631.z3k1/catalogue/papaura-ji-digambar-jain-atishaya-kshetra-tikamgarh-jain-temples-9JNOUy4g3Z-250.jpg" alt="Bandhaji" />
-      </div>
+    </a>
+    <a href="bandhaji.html" class="album">
+      <div class="album-cover"><img src="https://content.jdmagicbox.com/v2/comp/tikamgarh/k1/9999p7683.7683.190119163631.z3k1/catalogue/papaura-ji-digambar-jain-atishaya-kshetra-tikamgarh-jain-temples-9JNOUy4g3Z-250.jpg" alt="Bandhaji"></div>
       <h3>Bandhaji</h3>
-    </div>
-    <div class="album" data-album="muchhalmahavir">
-      <div class="album-cover">
-        <img src="https://www.udaipurblog.com/wp-content/uploads/2018/08/tripoto-600x338.jpg" alt="Muchhal Mahavir" />
-      </div>
+    </a>
+    <a href="muchhalmahavir.html" class="album">
+      <div class="album-cover"><img src="https://www.udaipurblog.com/wp-content/uploads/2018/08/tripoto-600x338.jpg" alt="Muchhal Mahavir"></div>
       <h3>Muchhal Mahavir</h3>
-    </div>
-    <div class="album" data-album="kumbharia">
-      <div class="album-cover">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Kumbhariya_Jain_Derasar_complex%2C_Ambaji_Gujarat_240.jpg" alt="Kumbharia" />
-      </div>
+    </a>
+    <a href="kumbharia.html" class="album">
+      <div class="album-cover"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Kumbhariya_Jain_Derasar_complex%2C_Ambaji_Gujarat_240.jpg" alt="Kumbharia"></div>
       <h3>Kumbharia</h3>
-    </div>
-    <div class="album" data-album="bawangaja">
-      <div class="album-cover">
-        <img src="https://www.nativeplanet.com/img/2018/03/3-1521635183.jpg" alt="Bawangaja" />
-      </div>
+    </a>
+    <a href="bawangaja.html" class="album">
+      <div class="album-cover"><img src="https://www.nativeplanet.com/img/2018/03/3-1521635183.jpg" alt="Bawangaja"></div>
       <h3>Bawangaja</h3>
-    </div>
-    <div class="album" data-album="ancientmarvels">
-      <div class="album-cover">
-        <img src="https://preview.redd.it/qvuxpn4e0gr41.png?auto=webp&s=f4cdd7e7826cfdf906255d05d1cefb37e0050e93" alt="Ancient Marvels" />
-      </div>
+    </a>
+    <a href="ancientmarvels.html" class="album">
+      <div class="album-cover"><img src="https://preview.redd.it/qvuxpn4e0gr41.png?auto=webp&s=f4cdd7e7826cfdf906255d05d1cefb37e0050e93" alt="Ancient Marvels"></div>
       <h3>Ancient Marvels</h3>
-    </div>
-    <div class="album" data-album="templesandscenery">
-      <div class="album-cover">  
-        <img src="https://surojitpalmal.com/wp-content/uploads/2024/01/Famous-Jain-Temples-in-India.webp" alt="Temples and Scenery" />
-      </div>
+    </a>
+    <a href="templesandscenery.html" class="album">
+      <div class="album-cover"><img src="https://surojitpalmal.com/wp-content/uploads/2024/01/Famous-Jain-Temples-in-India.webp" alt="Temples and Scenery"></div>
       <h3>Temples and Scenery</h3>
-    </div>
+    </a>
   </section>
-
-  <!-- Sub-gallery (hidden until you click) -->
-  <section id="sub-gallery" style="display:none; padding-top:70px;">
-    <button id="back-btn" style="margin:20px;">← Back to All Temples</button>
-    <h2 id="sub-title" style="text-align:center; color:black;"></h2>
-    <div id="sub-photos" class="albums-grid"></div>
-  </section>
-
-  <script>
-    // Auto-generate IMG_0373–IMG_0448 URLs for Palitana
-   const albums = {
-  palitana: Array.from(
-    { length: 448 - 373 + 1 },
-    (_, i) => `IMG_${String(373 + i).padStart(4, '0')}.jpeg`
-  )
-  // …
-};
-
-
-    const covers     = document.querySelectorAll('.album');
-    const mainGrid   = document.querySelector('section.albums-grid');
-    const subGallery = document.getElementById('sub-gallery');
-    const subTitle   = document.getElementById('sub-title');
-    const subPhotos  = document.getElementById('sub-photos');
-    const backBtn    = document.getElementById('back-btn');
-
-    covers.forEach(el => el.addEventListener('click', () => {
-      const slug = el.dataset.album;
-      const pics = albums[slug] || [];
-      subTitle.textContent = el.querySelector('h3').textContent;
-      subPhotos.innerHTML = pics
-        .map(src => `<div class="album-cover"><img src="${src}" alt=""></div>`)
-        .join('');
-      mainGrid.style.display  = 'none';
-      subGallery.style.display = 'block';
-    }));
-
-    backBtn.addEventListener('click', () => {
-      subGallery.style.display = 'none';
-      mainGrid.style.display   = 'grid';
-    });
-  </script>
 </body>
 </html>
