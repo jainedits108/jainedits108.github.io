@@ -230,3 +230,11 @@ body.gallery {
   }
 }
 
+/* ─────────────────────────────────────────
+   Sub-gallery override: uncrop & unzoom
+   ───────────────────────────────────────── */
+#sub-photos .album-cover img {
+  width: 100% !important;
+  height: auto  !important;
+  object-fit: none !important;
+}
