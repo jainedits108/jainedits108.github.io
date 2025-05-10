@@ -42,7 +42,7 @@ nav a:hover {
   border-radius: 4px;
 }
 
-/* Home & About – single-screen, no scroll */
+/* Home & About – single‑screen, no scroll */
 body.home,
 body.about {
   overflow: hidden;
@@ -210,17 +210,6 @@ body.gallery {
   font-size: 1.1em;
 }
 
-
-
-/* -- Updated image rules below -- */
-
-/* Image styling: full width, natural height (no crop/zoom) */
-.album-cover img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   nav {
@@ -240,3 +229,4 @@ body.gallery {
     max-width: 80%;
   }
 }
+
