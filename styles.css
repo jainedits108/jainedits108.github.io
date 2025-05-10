@@ -230,11 +230,24 @@ body.gallery {
   }
 }
 
-/* ─────────────────────────────────────────
-   Sub-gallery override: uncrop & unzoom
-   ───────────────────────────────────────── */
+/* ——— Sub-gallery: uniform 5:4 grid, full-image tiles ——— */
+#sub-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+#sub-photos .album-cover {
+  /* force each tile to 5:4 ratio */
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+}
+
 #sub-photos .album-cover img {
-  width: 100% !important;
-  height: auto  !important;
-  object-fit: none !important;
+  /* fill the tile exactly (no zoom/crop) */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* maintains ratio, fills container */
+  object-position: center; /* centers the image */
 }
