@@ -7,6 +7,25 @@
   <title>Palitana – Echoes of Jainism</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+    /* Custom intro section: set your own background and text here */
+    #custom-intro {
+      background: url('https://img.freepik.com/free-vector/watercolor-burgundy-gold-background_52683-148153.jpg?semt=ais_hybrid&w=740') center/cover no-repeat;
+      padding: 80px 20px;
+      margin: 40px auto;
+      max-width: 900px;
+      text-align: center;
+      color: #fff;
+      border-radius: 8px;
+    }
+    #custom-intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    #custom-intro p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
     /* uniform 4:5 grid tiles */
     .albums-grid {
       display: grid;
@@ -54,16 +73,17 @@
     </ul>
   </nav>
 
-  <section class="gallery-intro">
-    <h1>Palitana Album</h1>
-    <p>Walk the marble-white steps of Palitana — home to 863 Jain temples nestled atop a sacred hill.</p>
+  <!-- Custom intro: change background image URL and text below -->
+  <section id="custom-intro">
+    <h1>Palitana: Hill of a Thousand Temples</h1>
+    <p>Walk the marble-white steps of Palitana — home to 863 Jain temples nestled atop sacred Shatrunjaya Hill.</p>
   </section>
 
   <!-- Grid container for JavaScript injection -->
   <section class="albums-grid" id="palitana-grid"></section>
 
   <div style="text-align:center; margin:40px 0;">
-    <a href="gallery.html" style="color:black;">← Back to Gallery</a>
+    <a href="gallery.html" style="color:black; font-weight:bold;">← Back to Gallery</a>
   </div>
 
   <script>
@@ -83,7 +103,9 @@
         "IMG_0429.jpeg","IMG_0430.jpeg","IMG_0431.jpeg","IMG_0432.jpeg",
         "IMG_0433.jpeg","IMG_0434.jpeg","IMG_0435.jpeg","IMG_0436.jpeg",
         "IMG_0441.jpeg","IMG_0442.jpeg","IMG_0443.jpeg","IMG_0445.jpeg",
-        "IMG_0446.jpeg","IMG_0447.jpeg","IMG_0448.jpeg"
+        "IMG_0446.jpeg","IMG_0447.jpeg","IMG_0448.jpeg", "IMG_0534.jpeg","IMG_0539.jpeg","IMG_0540.jpeg","IMG_0541.jpeg",
+        "IMG_0542.jpeg","IMG_0543.jpeg","IMG_0544.jpeg","IMG_0569.jpeg",
+        "IMG_0570.jpeg","IMG_0571.jpeg"
       ];
       const grid = document.getElementById('palitana-grid');
       files.forEach((file, idx) => {
@@ -106,3 +128,4 @@
   </script>
 </body>
 </html>
+
