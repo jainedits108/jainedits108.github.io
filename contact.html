@@ -111,7 +111,17 @@
   </style>
 </head>
 <body class="contact">
-  <nav>
+<nav>
+  <!-- 1) hidden toggle checkbox -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+  <!-- 2) hamburger icon -->
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
+  <!-- 3) menu wrapper -->
+  <div class="nav-menu">
     <ul class="nav-left">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -120,9 +130,10 @@
     <ul class="nav-right">
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="stories.html">Stories</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
   <div class="contact-header">
     <p class="tagline">Have questions? Let’s chat—drop me a line!</p>
