@@ -251,3 +251,93 @@ body.gallery {
   object-fit: cover;       /* maintains ratio, fills container */
   object-position: center; /* centers the image */
 }
+/* 1) hide the checkbox by default */
+.nav-toggle {
+  display: none;
+}
+
+/* 2) style & position the hamburger icon */
+.nav-toggle-label {
+  display: none;
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 1100;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+.nav-toggle-label span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nav-toggle-label span::before {
+  content: "";
+  top: -10px;
+}
+.nav-toggle-label span::after {
+  content: "";
+  top: 10px;
+}
+
+/* 3) default menu wrapper (desktop flex) */
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* 4) mobile overrides */
+@media (max-width: 768px) {
+  /* show hamburger */
+  .nav-toggle-label {
+    display: block;
+  }
+
+  /* hide nav-menu off‐screen */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* slide in when checked */
+  .nav-toggle:checked ~ .nav-menu {
+    transform: translateY(0);
+  }
+
+  /* stack links */
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+  .nav-menu li {
+    margin: 15px 0;
+  }
+  nav a {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+}
