@@ -281,14 +281,14 @@ body.gallery {
 
 /* Responsive & Mobile Hamburger Nav */
 @media (max-width: 768px) {
-  /* Remove navbar background and stack logo/icon if any */
+  /* Navbar tweaks */
   nav {
     background: transparent;
     flex-direction: column;
     align-items: center;
   }
 
-  /* Show the hamburger icon */
+  /* Show hamburger icon */
   .nav-toggle-label {
     display: block;
   }
@@ -309,12 +309,12 @@ body.gallery {
     z-index: 1000;
   }
 
-  /* Slide in menu when checkbox is checked */
+  /* Slide in menu when checked */
   .nav-toggle:checked ~ .nav-menu {
     transform: translateY(0);
   }
 
-  /* Stack links vertically */
+  /* Stack nav links vertically */
   .nav-menu ul {
     flex-direction: column;
     width: 100%;
@@ -342,5 +342,34 @@ body.gallery {
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
     background: #000;
+  }
+
+  /* ——— Mobile About page fixes ——— */
+  body.about {
+    overflow: auto;
+    height: auto;
+  }
+  .about-container {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+    overflow: visible;
+    padding: 10px;
+  }
+  .about-container > .about-image,
+  .about-container > .about-text {
+    flex: none;
+    width: 100%;
+    max-height: none;
+  }
+  .about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .about-text {
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }
