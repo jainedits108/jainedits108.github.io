@@ -68,7 +68,17 @@
   </style>
 </head>
 <body class="gallery">
-  <nav>
+<nav>
+  <!-- 1) hidden toggle checkbox -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+  <!-- 2) hamburger icon -->
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
+  <!-- 3) menu wrapper -->
+  <div class="nav-menu">
     <ul class="nav-left">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -79,7 +89,8 @@
       <li><a href="stories.html">Stories</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+  </div>
+</nav>
 
   <!-- Custom intro: change background image URL and text below -->
   <section id="custom-intro">
