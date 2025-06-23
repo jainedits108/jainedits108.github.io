@@ -341,3 +341,18 @@ body.gallery {
     padding: 10px 0;
   }
 }
+@media (max-width: 768px) {
+  /* …all your existing mobile rules… */
+
+  /* remove navbar bg on mobile */
+  nav {
+    background: transparent;
+  }
+
+  /* make the hamburger lines black */
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    background: #000;
+  }
+}
