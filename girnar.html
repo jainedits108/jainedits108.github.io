@@ -1,0 +1,135 @@
+<!-- File: girnar.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palitana – Echoes of Jainism</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Full-page background for girnar */
+    body.gallery {
+      background: url('https://img.freepik.com/free-vector/watercolor-burgundy-gold-background_52683-148153.jpg?semt=ais_hybrid&w=740') center/cover no-repeat;
+      background-attachment: fixed;
+      padding-top: 70px; /* account for fixed navbar */
+      color: #333;
+    }
+
+    /* Custom intro section: set your own background and text here */
+    #custom-intro {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 80px 20px;
+      margin: 40px auto;
+      max-width: 900px;
+      text-align: center;
+      color: #fff;
+      border-radius: 8px;
+    }
+    #custom-intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    #custom-intro p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    /* uniform 4:5 grid tiles */
+    .albums-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .album-cover {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      border-radius: 8px;
+      position: relative;
+    }
+    .album-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    /* caption for missing images */
+    .missing-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.8);
+      color: #d00;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 4px 0;
+    }
+  </style>
+</head>
+<body class="gallery">
+<nav>
+  <!-- 1) hidden toggle checkbox -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+  <!-- 2) hamburger icon -->
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
+  <!-- 3) menu wrapper -->
+  <div class="nav-menu">
+    <ul class="nav-left">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="team.html">The Team</a></li>
+    </ul>
+    <ul class="nav-right">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- Custom intro: change background image URL and text below -->
+  <section id="custom-intro">
+    <h1>Palitana: Hill of a Thousand Temples</h1>
+    <p>Walk the marble-white steps of Palitana — home to 863 Jain temples nestled atop sacred Shatrunjaya Hill.</p>
+  </section>
+
+  <!-- Grid container for JavaScript injection -->
+  <section class="albums-grid" id="palitana-grid"></section>
+
+  <div style="text-align:center; margin:40px 0;">
+    <a href="gallery.html" style="color:black; font-weight:bold;">← Back to Gallery</a>
+  </div>
+
+  <script>
+    (function() {
+      const folderPath = '';
+      const files = [
+"02F01785-65F4-44A8-A8F1-0DD3245C95EE.jpeg","09B6FD63-BD33-4945-966F-E01D6D895AD2.jpeg","1588C66C-FE1B-4C99-9BA1-0F4B305D0335.jpeg","18617F92-29AF-4378-A918-208269121C6B.jpeg","2F22A1DF-0049-4957-8C1B-7D5FC3F74380.jpeg","5244DCD8-0BE5-4EC1-AF3C-AAD051AAD9FC.jpeg","5A0EB172-8E4B-4A1E-8F12-8F3F5CC7C35C.jpeg","62DD20B2-908A-46B9-82E5-3D1D46D6810D.jpeg","6B1DCBA8-277A-44D5-8615-09EB404C3DCF.jpeg","6B90E681-0EBF-44CC-95CB-E7D85AF3FBB2.jpeg","7ED3DA72-1D74-4787-8860-00DD65FE68BE.jpeg","88DC1653-6260-40C3-97C7-F78B3E07B55C.jpeg","A891A8F0-7390-4629-B9CF-6687148671E8.jpeg","D7C9A80B-2994-409A-85D0-3306998AC50B.jpeg","DE868F62-8150-4FE4-9963-43202528096C.jpeg","E805118E-C1B3-4850-A4EA-28E9F3458937.jpeg","E853BC92-CF80-4ED4-83C8-E1321B64C3CD.jpeg","EF2CB36E-23C9-4816-8450-FA201A5843EF.jpeg","IMG_0494.jpeg","IMG_0495.jpeg","IMG_0496.jpeg","IMG_0503.jpeg","IMG_0504.jpeg","IMG_0505.jpeg","IMG_0506.jpeg","IMG_0507.jpeg","IMG_0508.jpeg","IMG_0509.jpeg","IMG_0510.jpeg","IMG_0511.jpeg","IMG_0512.jpeg","IMG_0513.jpeg","IMG_0514.jpeg","IMG_0515.jpeg","IMG_0516.jpeg","IMG_0517.jpeg","IMG_0518.jpeg","IMG_0519.jpeg","IMG_0535.jpeg","IMG_0536.jpeg","IMG_0537.jpeg","IMG_0538.jpeg","IMG_0545.jpeg","IMG_0546.jpeg","IMG_0547.jpeg","IMG_0548.jpeg","IMG_0549.jpeg","IMG_0550.jpeg","IMG_0551.jpeg","IMG_0552.jpeg","IMG_0553.jpeg","IMG_0554.jpeg","IMG_0555.jpeg","IMG_0556.jpeg","IMG_0557.jpeg","IMG_0558.jpeg","IMG_0559.jpeg","IMG_0560.jpeg","IMG_0561.jpeg","IMG_0562.jpeg","IMG_0563.jpeg","IMG_0564.jpeg","IMG_0567.jpeg","IMG_0568.jpeg","IMG_0579.jpeg"
+
+      ];
+      const grid = document.getElementById('palitana-grid');
+      files.forEach((file, idx) => {
+        const cell = document.createElement('div');
+        cell.className = 'album-cover';
+        const img = document.createElement('img');
+        img.src = folderPath + file;
+        img.alt = `Palitana ${idx+1}`;
+        img.onerror = function() {
+          console.warn('Failed to load:', this.src);
+          const cap = document.createElement('div');
+          cap.className = 'missing-caption';
+          cap.textContent = file;
+          cell.appendChild(cap);
+        };
+        cell.appendChild(img);
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>
