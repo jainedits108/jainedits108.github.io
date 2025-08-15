@@ -1,0 +1,140 @@
+<!-- File: ranakpur.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranakpur – Echoes of Jainism</title>
+  <link rel="stylesheet" href="styles.css" />
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://github.com/jainedits108/jainedits108.github.io/blob/main/Logo%20(1).jpg?raw=true" />
+
+  
+  <style>
+    /* Full-page background for ranakpur */
+    body.gallery {
+      background: url('https://github.com/jainedits108/jainedits108.github.io/blob/main/ranakpur%20-%20Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg?raw=true') center/cover no-repeat;
+      background-attachment: fixed;
+      padding-top: 70px; /* account for fixed navbar */
+      color: #333;
+    }
+
+    /* Custom intro section: set your own background and text here */
+    #custom-intro {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 80px 20px;
+      margin: 40px auto;
+      max-width: 900px;
+      text-align: center;
+      color: #fff;
+      border-radius: 8px;
+    }
+    #custom-intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    #custom-intro p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    /* uniform 4:5 grid tiles */
+    .albums-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .album-cover {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      border-radius: 8px;
+      position: relative;
+    }
+    .album-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    /* caption for missing images */
+    .missing-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.8);
+      color: #d00;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 4px 0;
+    }
+  </style>
+</head>
+<body class="gallery">
+<nav>
+  <!-- 1) hidden toggle checkbox -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+  <!-- 2) hamburger icon -->
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
+  <!-- 3) menu wrapper -->
+  <div class="nav-menu">
+    <ul class="nav-left">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="team.html">The Team</a></li>
+    </ul>
+    <ul class="nav-right">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- Custom intro: change background image URL and text below -->
+  <section id="custom-intro">
+    <h1>Ranakpur: The Temple of a Thousand Pillars</h1>
+    <p>A masterpiece of Jain architecture, dedicated to Tirthankar Adinath. Known for its 1,444 intricately carved pillars—no two alike—it stands as a symbol of devotion and craftsmanship.</p>
+  </section>
+
+  <!-- Grid container for JavaScript injection -->
+  <section class="albums-grid" id="palitana-grid"></section>
+
+  <div style="text-align:center; margin:40px 0;">
+    <a href="gallery.html" style="color:black; font-weight:bold;">← Back to Gallery</a>
+  </div>
+
+  <script>
+    (function() {
+      const folderPath = '';
+      const files = [
+        ""
+      ];
+      const grid = document.getElementById('palitana-grid');
+      files.forEach((file, idx) => {
+        const cell = document.createElement('div');
+        cell.className = 'album-cover';
+        const img = document.createElement('img');
+        img.src = folderPath + file;
+        img.alt = `Palitana ${idx+1}`;
+        img.onerror = function() {
+          console.warn('Failed to load:', this.src);
+          const cap = document.createElement('div');
+          cap.className = 'missing-caption';
+          cap.textContent = file;
+          cell.appendChild(cap);
+        };
+        cell.appendChild(img);
+        grid.appendChild(cell);
+      });
+    })();
+  </script>
+</body>
+</html>
